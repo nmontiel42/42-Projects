@@ -1,5 +1,5 @@
 ## 42 Progress 🚀  
-<a href="https://github.com/nmontiel42/libft"><img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/libft_bonus_max.webp"> </a>
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/Libft"><img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/libft_bonus_max.webp"> </a>
 <a href="https://github.com/nmontiel42/Printf">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/ft_printf.webp"/></a>
 <a href="https://github.com/nmontiel42/get_next_line">
@@ -31,31 +31,31 @@
     <p><b>LANGUAGE: C</b></p>
     <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/Libft">LIBFT</a></li>
     <p>This project consists of programming a library in C.</p>
-    <li><a href="https://github.com/nmontiel42/Printf">FT_PRINTF</a></li>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/ft_printf">FT_PRINTF</a></li>
     <p>The goal of this project is quite simple. You will have to reprogram printf().</p>
-    <li><a href="https://github.com/nmontiel42/get_next_line">GET_NEXT_LINE</a></li>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/get_next_line">GET_NEXT_LINE</a></li>
     <p>The goal of this project is simple: program a function that returns
 a line read from a file descriptor.</p>
-    <li><a href="https://github.com/nmontiel42/so_long">SO_LONG</a></li>
+    <li><a href=https://github.com/nmontiel42/42-Projects/tree/main/so_long">SO_LONG</a></li>
     <p>This project is a small 2D game. It is designed to make you
 working with textures and sprites and some other basic gameplay elements.</p>
-    <li><a href="https://github.com/nmontiel42/push_swap">PUSH_SWAP</a></li>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/push_swap">PUSH_SWAP</a></li>
     <p>This project involves arranging data in a stack, with a limited set of instructions in the smallest number of moves. To make this possible, you will have to manipulate several sorting algorithms and choose the most appropriate solution for optimal sorting.</p>
-    <li><a href="https://github.com/nmontiel42/pipex">PIPEX</li></a>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/pipex">PIPEX</li></a>
     <p>This project will allow you to discover, by using it in your program, the
 operation of a UNIX mechanism that you already know.</p>
-    <li><a href="https://github.com/nmontiel42/philosophers">PHILOSOPHERS</li></a>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/Philosophers">PHILOSOPHERS</li></a>
     <p>In this project, you will learn the basic principles of spinning a process. You will learn how to create threads and discover mutexes.</p>
-    <li><a href="https://github.com/nmontiel42/minishell">MINISHELL</li></a>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/Minishell">MINISHELL</li></a>
     <p>The goal of this project is for you to create a simple shell. Yes, your own
 little bash. You will learn a lot about processes and file descriptors.</p>
-    <li><a href="https://github.com/nmontiel42/NetPractice">NETPRACTICE</li></a>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/NetPractice">NETPRACTICE</li></a>
     <p>NetPractice is a general practical exercise to help you discover networking.</p>
-    <li><a href="https://github.com/nmontiel42/cub3D">CUB3D</li></a>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/Cub3D">CUB3D</li></a>
     <p>This project is inspired by the world-famous eponymous 90's game, which was the first FPS ever. It will enable you to explore ray-casting. Your goal will be to make a dynamic view inside a maze, in which you'll have to find your way. </p>
       <br>
     <p><b>LANGUAGE: C++</b></p>
-    <li><a href="https://github.com/nmontiel42/CPP">CPP MODULES</li></a>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/CPP">CPP MODULES</li></a>
     <p>This repository includes all the exercises from C++ modules 0-9.</p>
       <p>-CPP00: Namespaces, classes, member functions, stdio streams,
 initialization lists, static, const, and some other basic
@@ -73,6 +73,6 @@ and Orthodox Canonical class form.</p>
       <p>-CPP09: STL. </p>
       <br>
       <p><b>VIRTUAL MACHINES</b></p>
-      <li><a href="https://github.com/nmontiel42/inception">INCEPTION</li></a>
+      <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/Inception">INCEPTION</li></a>
         <p>This document is a System Administration related exercise.</p>
   </ul>
