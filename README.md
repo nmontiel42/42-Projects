@@ -29,7 +29,7 @@
   <ul>
     <br>
     <p><b>LANGUAGE: C</b></p>
-    <li><a href="https://github.com/nmontiel42/libft">LIBFT</a></li>
+    <li><a href="https://github.com/nmontiel42/42-Projects/tree/main/Libft">LIBFT</a></li>
     <p>This project consists of programming a library in C.</p>
     <li><a href="https://github.com/nmontiel42/Printf">FT_PRINTF</a></li>
     <p>The goal of this project is quite simple. You will have to reprogram printf().</p>
