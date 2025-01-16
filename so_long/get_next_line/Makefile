@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nmontiel <montielarce9@gmail.com>          +#+  +:+       +#+         #
+#    By: nmontiel <nmontiel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 11:33:58 by nmontiel          #+#    #+#              #
-#    Updated: 2023/09/06 11:34:01 by nmontiel         ###   ########.fr        #
+#    Updated: 2025/01/16 17:11:58 by nmontiel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = ${SRC:.c=.o}
 
 RM = rm -f
 
-CC = GCC
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 

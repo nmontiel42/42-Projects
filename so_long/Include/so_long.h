@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmontiel <montielarce9@gmail.com>          +#+  +:+       +#+        */
+/*   By: nmontiel <nmontiel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:22:01 by nmontiel          #+#    #+#             */
-/*   Updated: 2023/09/27 18:51:49 by nmontiel         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:12:14 by nmontiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../Libft/libft.h"
+# include "../libft/libft.h"
 # include "../get_next_line/get_next_line.h"
 # include "../printf/ft_printf.h"
 # include "../MLX42/include/MLX42/MLX42.h"
