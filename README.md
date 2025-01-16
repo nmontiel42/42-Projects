@@ -1,29 +1,29 @@
 ## 42 Progress 🚀  
 <a href="https://github.com/nmontiel42/42-Projects/tree/main/Libft"><img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/libft_bonus_max.webp"> </a>
-<a href="https://github.com/nmontiel42/Printf">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/ft_printf">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/ft_printf.webp"/></a>
-<a href="https://github.com/nmontiel42/get_next_line">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/get_next_line">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/get_next_line_bonus_max.webp"/></a>
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/born2beroot_bonus_max.webp"/>
-<a href="https://github.com/nmontiel42/so_long">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/so_long">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/so_long.webp"/></a>
-<a href="https://github.com/nmontiel42/push_swap">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/push_swap">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/push_swap_bonus_max.webp"/></a>
-<a href="https://github.com/nmontiel42/pipex">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/Pipex">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/pipex_bonus_max.webp"/></a>
-<a href="https://github.com/nmontiel42/philosophers">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/Philosophers">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/philosophers.webp"/></a>
-<a href="https://github.com/nmontiel42/minishell">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/Minishell">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/minishell.webp"/></a>
-<a href="https://github.com/nmontiel42/NetPractice">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/NetPractice">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/netpractice_bonus_max.webp"/></a>
-<a href="https://github.com/nmontiel42/cub3D">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/Cub3D">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/cub3d.webp"/></a>
-<a href="https://github.com/nmontiel42/CPP">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/CPP">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/cpp_bonus.webp"/></a>
-<a href="https://github.com/nmontiel42/inception">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/Inception">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/inception.webp"/></a>
-<a href="https://github.com/nmontiel42/ft_irc">
+<a href="https://github.com/nmontiel42/42-Projects/tree/main/ft_irc">
 <img src="https://github.com/leogaudin/42_project_badges/raw/main/badges/ft_irc.webp"/></a>
 
   <ul>
