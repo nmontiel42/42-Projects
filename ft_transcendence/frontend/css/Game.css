@@ -1,0 +1,31 @@
+#pongCanvas,
+#multiplayerCanvas {
+  background-color: rgba(11, 34, 90, 0.85);
+  border: 3px solid #BE36CD;
+  box-shadow:
+    0 0 10px #BE36CD,
+    0 0 20px #318ED6,
+    0 0 40px rgba(49, 142, 214, 0.5);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+#gameControls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#pongCanvasContainer,
+#multiplayerContainer {
+  margin: 10px 0;
+}
+
+#startGameBtn,
+#resetGameBtn,
+#iaGameBtn {
+  margin: 0 10px;
+}

@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import './Register.css';
+@import './Game.css';
+@import './Tournament.css';
+@import './Home/Header.css';
+@import './Home/3dpong.css';
+@import './Home/Home.css';
+@import './2fa.css';
+
+@layer utilities {
+    .text-xs-custom {
+        font-size: 9px;
+    }
+    .text-shadow-custom {
+        text-shadow: 0 0 5px #318ED6;
+    }
+    .text-7px {
+        font-size: 7px;
+    }
+}
+
+body {
+    background-color: #000;
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(32, 105, 178, 0.3) 25%, rgba(32, 105, 178, 0.3) 26%, transparent 27%, transparent 74%, rgba(32, 105, 178, 0.3) 75%, rgba(32, 105, 178, 0.3) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(32, 105, 178, 0.3) 25%, rgba(32, 105, 178, 0.3) 26%, transparent 27%, transparent 74%, rgba(32, 105, 178, 0.3) 75%, rgba(32, 105, 178, 0.3) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: backgroundScroll 20s linear infinite;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(30, 13, 58, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+}
+
+@keyframes backgroundScroll {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100px 100px;
+    }
+
+}
+
+.divider {
+    width: 100%;
+    border-top: 2px solid #6b0daa;
+    opacity: 0.5;
+}
+
+.crt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+#registerView,
+#loginView,
+#usernameView,
+#changeUsernameView,
+#changePictureView {
+    background-color: rgba(11, 34, 90, 0.85);
+    border: 3px solid #BE36CD;
+    box-shadow:
+        0 0 10px #BE36CD,
+        0 0 20px #318ED6,
+        0 0 40px rgba(49, 142, 214, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    width: 320px;
+    max-width: 90vw;
+    z-index: 10;
+}
+
+#registerForm,
+#loginForm,
+#usernameForm,
+#changeUsernameForm,
+#changePictureForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#email,
+#password,
+#username,
+#loginEmail,
+#loginPassword,
+#usernameInput,
+#usernameChangeInput,
+#pictureChangeInput {
+    background-color: transparent;
+    border: 2px solid #BE36CD;
+    color: #D2D2EA;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    letter-spacing: 1px;
+    
+    transition: all 0.3s;
+    box-shadow: 0 0 5px rgba(49, 142, 214, 0.5);
+}
+
+#submit,
+#submitLogin,
+#submitUsername,
+#submitChangeUsername,
+#submitChangePicture,
+#cancelPicture,
+#closeWin,
+#startGameBtn,
+#resetGameBtn,
+#iaGameBtn,
+#generateTournamentBtn,
+#restartMultiplayerBtn,
+#stopStartMultiplayerBtn,
+#activateScore, 
+#reset3dGame,
+#tournamentBracket button  {
+    background-color: #BE36CD;
+    border: 2px solid #BE36CD;
+    color: #D2D2EA;
+    padding: 10px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow:
+        0 0 5px #BE36CD,
+        0 0 10px rgba(49, 142, 214, 0.7);
+    z-index: 1;
+}
+
+#submit:hover,
+#submitLogin:hover,
+#submitUsername:hover,
+#startGameBtn:hover,
+#resetGameBtn:hover,
+#iaGameBtn:hover,
+#generateTournamentBtn:hover,
+#tournamentBracket button:hover,
+#submitChangeUsername:hover,
+#submitChangePicture:hover,
+#cancelPicture:hover,
+#closeWin:hover,
+#restartMultiplayerBtn:hover,
+#stopStartMultiplayerBtn:hover
+ {
+    color: #fff;
+    box-shadow:
+        0 0 10px #BE36CD,
+        0 0 20px rgba(49, 142, 214, 0.7),
+        0 0 30px rgba(210, 210, 234, 0.5);
+    text-shadow: 0 0 5px #fff;
+    letter-spacing: 2px;
+}
+
+#activateScore:hover,
+#reset3dGame:hover {
+    color: #fff;
+    box-shadow:
+        0 0 10px #BE36CD,
+        0 0 20px rgba(49, 142, 214, 0.7),
+        0 0 30px rgba(210, 210, 234, 0.5);
+    text-shadow: 0 0 5px #fff;
+    letter-spacing: 1.2px;
+}

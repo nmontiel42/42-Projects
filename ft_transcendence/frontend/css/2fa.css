@@ -1,0 +1,75 @@
+.two-factor-content {
+    background-color: rgba(11, 34, 90, 0.85);
+    border: 3px solid #BE36CD;
+    box-shadow:
+        0 0 10px #BE36CD,
+        0 0 20px #318ED6,
+        0 0 40px rgba(49, 142, 214, 0.5);
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    color: #D2D2EA;
+    z-index: 10;
+}
+
+.two-factor-title {
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #318ED6;
+    color: #BE36CD;
+}
+
+.two-factor-subtitle {
+    font-size: 9px;
+    margin-bottom: 20px;
+    color: #D2D2EA;
+    text-shadow: 0 0 2px #318ED6;
+}
+
+.two-factor-input {
+    background-color: transparent;
+    border: 2px solid #BE36CD;
+    color: #D2D2EA;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 0 5px rgba(49, 142, 214, 0.5);
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.two-factor-button {
+    background-color: #BE36CD;
+    border: 2px solid #BE36CD;
+    color: #D2D2EA;
+    padding: 10px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow:
+        0 0 5px #BE36CD,
+        0 0 10px rgba(49, 142, 214, 0.7);
+    z-index: 1;
+    width: 100%;
+}
+
+.two-factor-button:hover {
+    color: #fff;
+    box-shadow:
+        0 0 10px #BE36CD,
+        0 0 20px rgba(49, 142, 214, 0.7),
+        0 0 30px rgba(210, 210, 234, 0.5);
+    text-shadow: 0 0 5px #fff;
+    letter-spacing: 2px;
+}

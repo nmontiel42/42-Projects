@@ -1,0 +1,92 @@
+
+/*---- Logo PONG ----*/
+
+.logo-text {
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 10px #318ED6,
+        0 0 20px #318ED6,
+        0 0 30px #318ED6;
+    letter-spacing: 2px;
+    position: relative;
+    animation: logoFlicker 2s infinite alternate;
+}
+
+@keyframes logoFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            0 0 10px #318ED6,
+            0 0 20px #318ED6,
+            0 0 30px #318ED6;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/*---- PONG Graphic ----*/
+
+#ball {
+    animation: ballMove 2s infinite linear;
+}
+
+@keyframes ballMove {
+    0%, 100% { transform: translateX(-15px); }
+    50% { transform: translateX(15px); }
+}
+
+/*---- Boton Login ----*/
+
+#goToLogin {
+    background-color: #BE36CD;
+    border: 2px solid #BE36CD;
+    color: #D2D2EA;
+    padding: 10px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow:
+        0 0 5px #BE36CD,
+        0 0 10px rgba(49, 142, 214, 0.7);
+    z-index: 1;
+}
+
+#goToLogin:hover {
+    color: #fff;
+    box-shadow: 
+        0 0 10px #BE36CD,
+        0 0 20px rgba(49, 142, 214, 0.7),
+        0 0 30px rgba(210, 210, 234, 0.5);
+    text-shadow: 0 0 5px #fff;
+    letter-spacing: 2px;
+}
+
+/*---- Botones de Idioma ----*/
+
+.lanBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #318ED6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: #D2D2EA;
+    font-size: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 5px rgba(49, 142, 214, 0.5);
+}
+
+.lanBtn:hover {
+    border-color: #BE36CD;
+    box-shadow: 0 0 10px #BE36CD;
+    transform: translateY(-2px);
+}

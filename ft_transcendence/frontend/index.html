@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PONG</title>
+  <link rel="stylesheet" href="/dist/output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="public/letra-t.png" sizes="16x16">
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+
+<body>
+  <div class="scanlines"></div>
+
+  <!-- REGISTER -->
+
+  <div id="registerView" class="crt">
+
+    <div class="mb-5 relative" id="logo">
+      <div id="logo-text" class="logo-text">Bienvenido a PONG</div>
+    </div>
+
+    <div class="flex my-6 relative justify-center" id="pong-graphic">
+      <div id="paddle1" class="w-2.5 h-10 bg-[#BE36CD] shadow-[0_0_10px_#BE36CD]"></div>
+      <div id="ball" class="w-2.5 h-2.5 bg-[#d2d2ea] rounded-full mx-5 shadow-[0_0_10px_#d2d2ea] relative"></div>
+      <div id="paddle2" class="w-2.5 h-10 bg-[#BE36CD] shadow-[0_0_10px_#BE36CD]"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 id="neon-subtitle" class="text-xs-custom mt-5 mb-5 text-[#D2D2EA] tracking-wide text-shadow-custom">REGISTRATE
+      PARA JUGAR</h3>
+
+    <form id="registerForm">
+      <input type="email" id="email" name="email" placeholder="Tu correo" required />
+      <input type="text" id="username" name="username" placeholder="Tu nombre de usuario" required />
+      <input type="password" id="password" name="password" placeholder="Tu contraseña" required />
+      <button class="mb-4" id="submit" type="submit">Registrarse</button>
+    </form>
+
+    <div class="divider"></div>
+
+    <div id="changeToLogin" class="flex flex-col">
+      <h1 id="theresAccount" class="text-xs mt-5 mb-5 text-[#D2D2EA] tracking-wide text-shadow-custom">¿Ya tienes
+        cuenta?</h1>
+      <button id="goToLogin">Inicia sesión</button>
+      <p id="oGoogle" class="text-white m-2">o</p>
+
+      <div id="g_id_onload" data-client_id="47485993219-g44j83f2em6ug69vfdm0o5dljrm84lk0.apps.googleusercontent.com"
+        data-callback="handleGoogleLogin" data-auto_prompt="false">
+      </div>
+      <div class="g_id_signin" data-type="standard" data-shape="square" data-theme="filled_blue" data-text="signin_with"
+        data-size="large" data-logo_alignment="center" data-lang="en">
+      </div>
+    </div>
+
+    <div id="laguageButtons" class="flex justify-center mt-7.5 gap-4">
+      <button class="lanBtn" id="esBtn">ES</button>
+      <button class="lanBtn" id="enBtn">EN</button>
+      <button class="lanBtn" id="frBtn">FR</button>
+    </div>
+
+    <div id="version-text"
+      class="absolute bottom-2.5 right-3.75 text-[10px] text-[rgba(210,210,234,0.5)] shadow-[0_0_2px_rgba(49,142,214,0.3)]">
+      v13.3.2025</div>
+  </div>
+
+
+  <!-- LOGIN -->
+
+
+  <div id="loginView" style="display:none;">
+    <h1 id="loginTitle" class="m-2.5 text-white text-xl">Introduce tus datos</h1>
+    <form id="loginForm">
+      <input type="text" id="loginEmail" name="loginEmail" placeholder="Tu correo o usuario" required />
+      <input type="password" id="loginPassword" name="loginPassword" placeholder="Tu contraseña" required />
+      <button id="submitLogin" type="submit">Iniciar sesión</button>
+    </form>
+
+    <div class="divider mb-4 mt-2"></div>
+
+    <div id="g_id_onload" data-client_id="47485993219-g44j83f2em6ug69vfdm0o5dljrm84lk0.apps.googleusercontent.com"
+      data-callback="handleGoogleLogin" data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin" data-type="standard" data-shape="square" data-theme="filled_blue" data-text="signin_with"
+      data-size="large" data-logo_alignment="center">
+    </div>
+
+    <button id="goToRegister" class="text-white text-7px mt-5 hover:text-[#BE36CD] cursor-pointer">¿No tienes cuenta?
+      Regístrate</u></button>
+  </div>
+
+
+  <!-- USERNAME -->
+
+
+  <div id="usernameView" style="display:none;">
+    <h1 id="usernameWelcome" class="text-white text-xl mb-2">¡Hola!</h1>
+    <p id="usernameText" class="text-white text-xs mb-2 flex flex-row">Introduce un nombre de usuario:</p>
+    <form id="usernameForm">
+      <input type="text" id="usernameInput" name="usernameInput" placeholder="Tu nombre de usuario" required />
+      <button id="submitUsername" type="submit">Guardar</button>
+    </form>
+  </div>
+
+
+  <!-- HOME -->
+
+
+  <div id="homeView" style="display: none;" class="z-10">
+    <header class="w-full p-4 flex justify-between items-center fixed top-0 left-0">
+
+      <h1 class="text-2xl font-semibold text-white retroPong hover:cursor-default">Pong</h1>
+
+      <div id="icons" class="flex flex-row space-x-4 flex-grow justify-center">
+        <p class="hover:cursor-pointer" id="homePlay">Inicio</p>
+        <div id="divider2" class="w-0.5 h-6 bg-white"></div>
+        <p class="hover:cursor-pointer" id="localPlay">1vs1</p>
+        <div id="divider2" class="w-0.5 h-6 bg-white"></div>
+        <p class="hover:cursor-pointer" id="multiPlay">Multi</p>
+        <div id="divider2" class="w-0.5 h-6 bg-white"></div>
+        <p class="hover:cursor-pointer" id="tourPlay">Torneo</p>
+        <div id="divider2" class="w-0.5 h-6 bg-white"></div>
+        <p class="hover:cursor-pointer" id="realPlay">3D</p>
+      </div>
+
+      <button id="userProfile"
+        class="text-white font-semibold text-2xl w-12 h-12 rounded-full overflow-hidden border-2 border-white hover:cursor-pointer">
+        <img id="profileImage" src="public/letra-t.png" alt="User profile picture" class="w-full h-full object-cover">
+      </button>
+
+    </header>
+
+    <div id="confirmModal" style="display:none;" class="z-10">
+      <div id="modalContent" class="absolute top-16 right-5 bg-white shadow-lg rounded-lg w-45 p-4 z-10 flex flex-col">
+        <button style="display:block; font-size: 0.6rem;" id="logoutBtn"
+          class="bg-[#318ED6] text-white px-4 py-2 rounded-lg mb-2 w-full text-xs hover:cursor-pointer hover:scale-105">Cerrar
+          sesión</button>
+        <button style="display:block; font-size: 0.6rem;" id="deleteAccountBtn"
+          class="bg-[#BE36CD] text-white px-4 py-2 rounded-lg w-full text-xs mb-2 hover:cursor-pointer hover:scale-105">Eliminar
+          cuenta</button>
+        <button style="display:block; font-size: 0.6rem;" id="optionsBtn"
+          class="bg-[#0b225a] text-white px-4 py-2 rounded-lg w-full text-xs hover:cursor-pointer hover:scale-105">Opciones</button>
+
+        <button style="display:none;" id="goingBack"
+          class="text-black px-4 py-2 text-xs hover:cursor-pointer hover:scale-105 self-start mt-[-10px] ml-[-10px]">
+          < </button>
+            <button style="display:none; font-size: 0.6rem;" id="changeUsernameBtn"
+              class="bg-[#318ED6] text-white px-4 py-2 rounded-lg mb-2 w-full text-xs hover:cursor-pointer hover:scale-105">Cambiar
+              nombre de usuario</button>
+            <button style="display:none; font-size: 0.6rem;" id="changeLanguage"
+              class="bg-[#0b225a] text-white px-4 py-2 rounded-lg mb-2 w-full text-xs hover:cursor-pointer hover:scale-105">Cambiar
+              idioma</button>
+            <button style="display:none; font-size: 0.6rem;" id="setup2FABtn"
+              class="bg-[#0b225a] text-white px-4 py-2 rounded-lg w-full text-xs hover:cursor-pointer hover:scale-105">Habilitar 
+              2FA</button>
+
+            <div id="selectLang" style="display: none;">
+              <button id="goingBackLang"
+                class="text-black px-4 py-2 text-xs hover:cursor-pointer hover:scale-105 self-start mt-[-10px] ml-[-10px]">
+                < </button>
+                  <button
+                    class="bg-[#318ED6] text-white px-4 py-2 rounded-lg mb-2 w-full text-xs hover:cursor-pointer hover:scale-105"
+                    id="esBtn2">ESPAÑOL</button>
+                  <button
+                    class="bg-[#BE36CD] text-white px-4 py-2 rounded-lg w-full text-xs mb-2 hover:cursor-pointer hover:scale-105"
+                    id="enBtn2">INGLES</button>
+                  <button
+                    class="bg-[#0b225a] text-white px-4 py-2 rounded-lg w-full text-xs hover:cursor-pointer hover:scale-105"
+                    id="frBtn2">FRANCES</button>
+            </div>
+
+      </div>
+    </div>
+
+
+    <div class="crt mt-16 pt-4">
+      <main class="flex justify-center items-center flex-col">
+
+        <div id="initialView" class="text-center w-full max-w-4xl flex flex-col items-center">
+          <p class="text-white text-l sm:text-2xl text-shadow-custom animate-pulse mb-4" id="initialWelcome">
+            ¡Bienvenid@!
+          </p>
+          <p id="usernameDisplay" class="text-l text-[#00FFFF] drop-shadow-lg text-shadow-custom text-center mb-8">
+          </p>
+          
+          <p class="text-white text-xs sm:text-sm text-shadow-custom mb-4" id="initialInstructions">
+            Explora distintos modos de juego y diviértete tanto en solitario como con amigos. ¡Elige tu modo de juego y empieza a jugar!
+          </p>
+
+          <div class="w-full py-8 px-4 flex gap-8">
+            <div class="card" id="containerOne">
+              <img src="public/multijugador.png" alt="Logo" />
+              <h2 id="titleOne">1vs1</h2>
+              <div class="info-wrapper">
+                <p id="infoOne">
+                  Juega una partida de pong en un 1vs1 o contra otros 3 jugadores en el mismo teclado. El mejor de 5 será el ganador.
+                </p>
+              </div>
+            </div>
+
+            <div class="card" id="containerTwo">
+              <img src="public/trofeo.png" alt="Logo" />
+              <h2 id="titleTwo">Torneo</h2>
+              <div class="info-wrapper">
+                <p id="infoTwo">
+                  Crea un torneo local de hasta 8 jugadores, introducir vuestros nombres y a jugar. Compite hasta que solo quede un ganador.
+                </p>
+              </div>
+            </div>
+
+            <div class="card" id="containerThree">
+              <img src="public/3d.png" alt="Logo" />
+              <h2 id="titleThree">3D</h2>
+              <div class="info-wrapper">
+                <p id="infoThree">
+                  Vive la experiencia Pong de la manera más inmersiva. Ajusta la distancia y el ángulo que quieras y disfruta del juego desde otras perspectivas.
+                </p>
+              </div>
+            </div>
+
+            <div class="card" id="containerFour">
+              <img src="public/inteligencia-artificial.png" alt="Logo" />
+              <h2 id="titleFour">IA</h2>
+              <div class="info-wrapper">
+                <p id="infoFour">
+                  Activa el modo IA para jugar contra la inteligencia artificial. Perfecto para practicar o si no tienes amigos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-white text-xs sm:text-sm text-shadow-custom mt-4" id="initialInstructions2">
+            Selecciona el modo de juego que prefieras en la parte superior y ¡a jugar!
+          </p>
+
+        </div>
+
+
+        <div id="localPlayView" style="display:none;">
+
+          <div id="gameArea">
+            <div id="pongCanvasContainer">
+              <canvas id="pongCanvas" width="800" height="400"></canvas>
+            </div>
+          </div>
+
+          <div id="gameControls">
+            <button id="startGameBtn">Iniciar Juego</button>
+            <button id="resetGameBtn">Reiniciar Juego</button>
+            <button id="iaGameBtn">Jugar contra IA</button>
+          </div>
+
+        </div>
+
+        <div id="multiPlayView" style="display:none;">
+          <div id="multiplayerContainer">
+            <div id="multiplayerGameArea" class="flex flex-col items-center">
+              <canvas id="multiplayerCanvas" width="800" height="400"></canvas>
+              <div class="flex justify-row gap-4">
+                <button id="stopStartMultiplayerBtn" class="flex justify-center mt-15">Iniciar Juego</button>
+                <button id="restartMultiplayerBtn" class="flex justify-center mt-15">Reiniciar Juego</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tournamentView" style="display: none;">
+          <h2 id="createTour">Crear Torneo</h2>
+          <form id="tournamentForm">
+            <div class="form-group">
+              <label for="numPlayers">Número de Jugadores:</label>
+              <select id="numPlayers" name="numPlayers" required>
+                <option value="0" disabled selected>0</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+          </form>
+          <div id="playersInput"></div>
+          <button id="generateTournamentBtn">Crear Torneo</button>
+          <div id="tournamentBracket"></div>
+          <div id="tournamentWinnerView" style="display:none;">
+            <div id="tournamentWinner">Ganador del Torneo: </div>
+            <div id="tourWinner"></div>
+          </div>
+        </div>
+
+        <div id="realPlayView" style="display:none;" class="text-white">
+          <div id="show3d" class="text-white flex flex-col items-center">
+            <canvas id="renderCanvas" style="width:100%; height:400px;"></canvas>
+
+            <div class="w-full flex flex-col items-center mt-4">
+
+              <div id="score" class="flex items-center text-xl font-semibold gap-6">
+                <div class="flex flex-col items-center">
+                  <p id="player1Name" class="text-[#318ED6]">Ping</p>
+                  <p id="player1Score">0</p>
+                </div>
+                <div id="divider2" class="w-0.5 h-6 bg-white"></div>
+                <div class="flex flex-col items-center">
+                  <p id="player2Name" class="text-[#318ED6]">Pong</p>
+                  <p id="player2Score">0</p>
+                </div>
+              </div>
+
+              <div class="flex justify-center gap-4 mt-4 w-full max-w-sm">
+                <button id="activateScore">
+                  Iniciar Juego
+                </button>
+                <button id="reset3dGame">
+                  Reiniciar Juego
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="winView" class="text-white bg-gray-900/50 p-6 rounded-lg shadow-lg text-center"
+            style="display: none;">
+            <div class="flex justify-center items-center gap-2 text-xl font-semibold">
+              <p id="winMsg">¡Ganaste</p>
+              <p id="winnerPlayer" class="text-[#318ED6]"></p>
+              <p>!</p>
+            </div>
+            <img
+              src="https://media2.giphy.com/media/BK1EfIsdkKZMY/giphy.gif?cid=6c09b952ufxyfabixutnsm8xo2kwfzk49snn8pxii6ozbwzc&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+              id="winnerImage" alt="Ganador" class="w-40 h-40 mx-auto mt-4 rounded-lg shadow-md" />
+            <button id="closeWin" class="mt-4 rounded-xl">
+              Cerrar
+            </button>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+  </div>
+
+
+<div id="twoFactorAuthView" class="two-factor-modal" style="display:none;">
+  <div class="two-factor-content">
+      <h1 id="TwoFactorTitle" class="two-factor-title">Autentificación en 2 pasos</h1>
+      <p id="TwoFactorSubtitle" class="two-factor-subtitle">Introduce el codigo de verificaciñon enviado a tu correo:</p>
+      <form id="twoFactorAuthForm">
+          <input 
+              type="text" 
+              id="verificationCode" 
+              name="verificationCode" 
+              placeholder="Codigo de verificación" 
+              required 
+              class="two-factor-input"
+          />
+          <button 
+              id="submitVerificationCode" 
+              type="submit"
+              class="two-factor-button"
+          >
+              Verificar
+          </button>
+      </form>
+  </div>
+</div>
+
+  <div id="changeUsernameView" style="display:none;">
+    <p id="usernameChangeText" class="text-white text-xs mb-2 flex flex-row">Introduce un nuevo nombre de usuario:</p>
+    <form id="changeUsernameForm">
+      <input type="text" id="usernameChangeInput" name="usernameChangeInput" placeholder="Tu nuevo usuario" required />
+      <button id="submitChangeUsername" type="submit">Cambiar</button>
+    </form>
+  </div>
+  </div>
+
+  <script src="/dist/output.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:443"
+    networks:
+      - app-network
+    
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - ./frontend/conf:/app/certs
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
